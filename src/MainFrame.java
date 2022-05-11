@@ -114,7 +114,7 @@ public class MainFrame {
                         Files.walkFileTree(Paths.get(patchOfSearch), searchFileVisitor);
                         List<Path> foundFiles = searchFileVisitor.getFoundFiles();
                         for (Path file : foundFiles) {
-                            result.append(file.getRoot().toString() + file.getFileName());
+                            result.append(file.normalize().toString() + file.getFileName());
                             result.append("\n");
                         }
                         if (foundFiles.isEmpty()) {
